@@ -1,7 +1,7 @@
 #include <cstdint>
 #include <fmt/core.h>
-#include <fmt/time.h>
 #include <fmt/printf.h>
+#include <fmt/time.h>
 #include <iostream>
 #include <stdexcept>
 #include <type_traits>
@@ -36,8 +36,8 @@ doit(const uint8_t* Data, std::size_t Size)
 
   // allocates as tight as possible, making it easier to catch buffer overruns.
   // also, make it null terminated.
-  std::vector<char> buf(Size+1);
-  std::memcpy(buf.data(),Data,Size);
+  std::vector<char> buf(Size + 1);
+  std::memcpy(buf.data(), Data, Size);
   std::string message = fmt::sprintf(buf.data(), item1, item2);
 }
 
