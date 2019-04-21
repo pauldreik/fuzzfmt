@@ -40,9 +40,10 @@ doit_time(const uint8_t* Data, std::size_t Size)
   std::memcpy(&item, Data, N);
   Data += N;
   Size -= N;
-  // allocates as tight as possible, making it easier to catch buffer overruns
-  std::vector<char> buf(Data, Data + Size);
-  buf.resize(Size + 1, '\0');
+  // allocates as tight as possible, making it easier to catch buffer overruns.
+  // also, make it null terminated.
+  std::vector<char> buf(Size+1);
+  std::memcpy(buf.data(),Data,Size);
   auto* b = std::localtime(&item);
   if (b) {
     std::string message = fmt::format(buf.data(), *b);
