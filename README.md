@@ -2,8 +2,9 @@
 This is for fuzzing libfmt which is proposed for standardization, so it's extra
 important that bugs are smoked out.
 
-It has found a bug:
-[fmt github #1124](https://github.com/fmtlib/fmt/issues/1124)
+It has found bugs:
+- [fmt github #1124](https://github.com/fmtlib/fmt/issues/1124)
+- [fmt github #1127](https://github.com/fmtlib/fmt/issues/1127)
 
 Unfortunately one has to limit the maximum memory allocation, otherwise
 the fuzzing will soon interrupt after trying to allocate many GB of memory. That is why the submodule
