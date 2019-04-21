@@ -43,6 +43,8 @@ afl-fuzz -i corpus -o out -- ./reproducer_fuzz_two_args @@
 
 # libFuzzer
 
+## with sanitizers
+
 ```sh
 mkdir build-libfuzzer-sanitizers
 cd build-libfuzzer-sanitizers/
@@ -52,3 +54,13 @@ mkdir out
 ./fuzzer_fuzz_two_args out corpus
 ```
 
+## plain (good for speed, corpus exploration)
+
+```sh
+mkdir build-libfuzzer-plain
+cd build-libfuzzer-plain/
+CXX=clang++ CXXFLAGS="-O3" cmake .. -Dreproduce_mode=off
+make
+mkdir -p out corpus
+./fuzzer_fuzz_two_args out corpus
+```
