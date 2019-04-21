@@ -7,7 +7,7 @@ It has found a bug:
 
 Unfortunately one has to limit the maximum memory allocation, otherwise
 the fuzzing will soon interrupt after trying to allocate many GB of memory. That is why the submodule
-does not point to upstream fmt, but instead to a branch which introduces the nice blocks like:
+does not point to upstream fmt, but instead to a [branch in fmt fork](https://github.com/pauldreik/fmt/tree/fuzz) which introduces the nice blocks like:
 ```cpp
 #ifdef FUZZING_BUILD_MODE_UNSAFE_FOR_PRODUCTION
 if(spec.precision>100000) {
