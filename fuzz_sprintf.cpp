@@ -1,7 +1,7 @@
 #include <cstdint>
 #include <fmt/core.h>
 #include <fmt/printf.h>
-#include <fmt/time.h>
+#include <fmt/chrono.h>
 #include <iostream>
 #include <stdexcept>
 #include <type_traits>
